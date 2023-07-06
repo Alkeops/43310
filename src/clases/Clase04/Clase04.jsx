@@ -1,4 +1,5 @@
-import { Button, Title, FlexComponent } from "../../components/common";
+import { Button, Title, FlexComponent, Input } from "../../components/common";
+import {useState} from "react";
 /* 
 Componentes de presentacion, solo estan para mostrar informacion, altamente ligados con los estilos.
 
@@ -10,6 +11,7 @@ ctrl + p y nombre para abrir el archivo directamente
 */
 
 export const Clase04 = () => {
+  const [value, setValue] = useState("");
   return (
     <FlexComponent gap="40px" align="flex-start">
       <Title label="Clase04" />
@@ -19,6 +21,7 @@ export const Clase04 = () => {
         <Title label="Title simple" variant="subtitle" />
         <Button label="Boton sin variant" />
         <Button label="Boton secondary" variant="secondary" />
+        <Input placeholder="Un input simple" value={value} onChange={({target}) => setValue(target.value)} />
       </FlexComponent>
     </FlexComponent>
   );

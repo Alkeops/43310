@@ -1,9 +1,18 @@
 .button, .button--primary{
   background: #646cff;
   color: #fff;
+  transition: .3s;
 }
 .button--secondary{
     background: transparent;
     color: #646cff;
     border: 1px solid #646cff;
+}
+
+.button:hover{
+  filter: brightness(1.1);
+}
+
+.button--secondary:hover{
+  background: #646cff23;
 }
