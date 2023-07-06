@@ -1,0 +1,17 @@
+.video{
+    position: relative;
+}
+
+.video__play, .video__pause {
+    position: absolute;
+}
+
+.video__pause{
+    bottom: 16px;
+    right: 16px;
+}
+
+.video__play{
+    bottom: 64px;
+    right: 16px;
+}

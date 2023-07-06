@@ -1,0 +1,1 @@
+export {Clase05} from "./Clase05";

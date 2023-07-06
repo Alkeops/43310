@@ -1,0 +1,9 @@
+.button, .button--primary{
+  background: #646cff;
+  color: #fff;
+}
+.button--secondary{
+    background: transparent;
+    color: #646cff;
+    border: 1px solid #646cff;
+}
