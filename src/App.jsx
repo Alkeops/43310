@@ -7,11 +7,11 @@ function App() {
     <div>
       <FlexComponent align="flex-start" gap={50}>
         {/* CLASE COMPONENTES 1 - clases/Clase04
-            ctrl + p Clase04 para abrirlo 
+            ctrl + p Clase04 para abrirlo  o F12
       */}
         <Clase04 />
         {/* CLASE COMPONENTES 2 - clases/Clase05
-            ctrl + p Clase05 para abrirlo 
+            ctrl + p Clase05 para abrirlo  o F12
       */}
         <Clase05 />
       </FlexComponent>

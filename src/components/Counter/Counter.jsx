@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button, FlexComponent } from "../common";
 
-export const Counter = ({ stock, onAdd }) => {
+export const Counter = ({ stock = 0, onAdd }) => {
   const [count, setCount] = useState(1);
 
   return (
