@@ -1,6 +1,7 @@
 .title,
 .title--title {
-  font-size: 4.4rem;
+  font-size: 3.2em;
+  line-height: 1.1;
 }
 
 .title--subtitle {
