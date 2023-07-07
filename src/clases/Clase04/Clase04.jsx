@@ -1,4 +1,7 @@
+import { Card } from "../../components/Card";
 import { Counter } from "../../components/Counter";
+import { Form } from "../../components/Form";
+import { ToggleTheme } from "../../components/ToggleTheme";
 import { Button, Title, FlexComponent, Input } from "../../components/common";
 import { useState } from "react";
 /* 
@@ -29,8 +32,11 @@ export const Clase04 = () => {
       </FlexComponent>
       <Title label="Componentes con estado" variant="subtitle" />
       {/* Componentes con estado */}
-      <FlexComponent direction="row" gap="24px">
+      <FlexComponent  gap="24px">
         <Counter stock={10} onAdd={(qty) => console.log(`van ${qty}`)} />
+        <Card />
+        <ToggleTheme />
+        <Form />
       </FlexComponent>
     </FlexComponent>
   );

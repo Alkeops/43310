@@ -17,10 +17,12 @@ export const Button = ({
   variant = "",
   icon,
   className = "",
+  ...props
 }) => (
   <button
     className={`button button--${variant} ${className}`}
     onClick={onClick}
+    {...props}
   >
     {icon}
     {label}

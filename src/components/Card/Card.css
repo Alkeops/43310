@@ -1,0 +1,13 @@
+.card {
+  height: 250px;
+  width: 200px;
+  overflow: hidden;
+  background: #313030;
+  border-radius: 8px;
+}
+
+.card__img{
+    object-fit: cover;
+    width: auto;
+    transition: .5s;
+}
