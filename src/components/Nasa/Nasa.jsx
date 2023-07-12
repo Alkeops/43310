@@ -9,7 +9,6 @@ export const Nasa = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  
   return (
     <FlexComponent align="flex-start">
       <FlexComponent direction={"row"} justify={"space-between"} fullWidth>
@@ -20,14 +19,8 @@ export const Nasa = () => {
         <Button label="Cargar más" onClick={() => {}} />
       </FlexComponent>
       <FlexComponent align="flex-start" gap="40px">
-        {data.map(({ url, title, explanation, copyright }, idx) => (
-          <NasaCard
-            key={idx}
-            img={url}
-            explanation={explanation}
-            by={copyright}
-            title={title}
-          />
+        {data.map((_, idx) => (
+          <NasaCard />
         ))}
       </FlexComponent>
     </FlexComponent>

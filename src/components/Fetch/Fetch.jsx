@@ -29,9 +29,6 @@ export const Fetch = () => {
           {products.map((product) => (
             <Card
               key={product.id}
-              img={product.images[0]}
-              title={product.title}
-              price={product.price}
             />
           ))}
         </FlexComponent>

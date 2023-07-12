@@ -11,13 +11,8 @@ export const Pokemons = () => {
     <FlexComponent gap="8px">
       <Title label="Pokemons" variant="subtitle" />
       <FlexComponent direction="row" wrap="wrap">
-        {pokemons.map(({ id, name, sprites }) => (
-          <Pokemon
-            key={id}
-            name={name}
-            number={id}
-            img={sprites.other["official-artwork"].front_default}
-          />
+        {pokemons.map(() => (
+          <Pokemon key={id} />
         ))}
       </FlexComponent>
     </FlexComponent>
