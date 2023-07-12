@@ -1,5 +1,4 @@
-import { Clase04, Clase06 } from "./clases";
-import { Clase05 } from "./clases/Clase05";
+import { Clase04, Clase05, Clase06, Clase07 } from "./clases";
 import { FlexComponent } from "./components/common";
 
 function App() {
@@ -15,7 +14,9 @@ function App() {
       */}
         {/* <Clase05 /> */}
         {/* CLASE PROMISES, ASINCRONIA Y MAP */}
-        <Clase06 />
+        {/* <Clase06 /> */}
+        {/* CLASE CONSUMIENDO APIS - clases/Clase07 */}
+        <Clase07 />
       </FlexComponent>
     </div>
   );
