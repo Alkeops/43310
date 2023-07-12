@@ -13,15 +13,24 @@ import "./FlexComponent.css";
     Además recibe children, que serian los elementos que se estarian acomodando de manera adecuada
 */
 
-
-export const FlexComponent = ({ align, children, direction, gap, justify }) => (
+export const FlexComponent = ({
+  align,
+  children,
+  direction,
+  gap,
+  justify,
+  wrap,
+  fullWidth
+}) => (
   <div
     className="flex-component"
     style={{
       gap,
       flexDirection: direction,
       alignItems: align,
-      justifyContent: justify
+      justifyContent: justify,
+      flexWrap: wrap,
+      width: fullWidth ? "100%" : "auto"
     }}
   >
     {children}
