@@ -15,14 +15,15 @@ export const Pokemons = () => {
       return fetch(pokemon.url).then((response) => response.json());
     });
     const _pokemons = await Promise.all(promises);
-    setPokemons(_pokemons);
-    /* let _pokemons = []
+     setPokemons(_pokemons); 
+  
+  /*   let _pokemons = []
     for(const pokemon of data.results){
         const response = await fetch(pokemon.url);
         const data = await response.json();
         _pokemons = [..._pokemons, data]
-    } */
-  };
+    }setPokemons(_pokemons);  */
+  }; 
 
   useEffect(() => {
     /*  fetch(API_URL)

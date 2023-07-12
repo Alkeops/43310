@@ -1,0 +1,39 @@
+.card {
+  width: 220px;
+  height: 380px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  &__img {
+    overflow: hidden;
+    height: 280px;
+    width: 100%;
+    max-width: 300px;
+    position: relative;
+    
+
+    border-radius: 8px;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: 1.2s;
+    }
+  }
+  &__info {
+    height: 100%;
+    &-title {
+      font-size: 1.4rem;
+      width: 100%;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: white;
+    }
+    &-price {
+      font-size: 2.4rem;
+      width: 100%;
+      font-weight: 600;
+      color: white;
+    }
+  }
+}
