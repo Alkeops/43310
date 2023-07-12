@@ -9,20 +9,7 @@ export const Nasa = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    handleRequest();
-  }, []);
-
-  const handleRequest = async () => {
-    setLoading(true);
-    const response = await fetch(
-      `${API_URL}planetary/apod?api_key=${API_KEY}&count=5`
-    );
-    const json = await response.json();
-    setLoading(false);
-    setData([...json, ...data]);
-  };
-
+  
   return (
     <FlexComponent align="flex-start">
       <FlexComponent direction={"row"} justify={"space-between"} fullWidth>
@@ -30,7 +17,7 @@ export const Nasa = () => {
           <Title label="NASA" variant="subtitle" />
           <Title label={loading ? "Cargando..." : ""} variant="subtitle" />
         </FlexComponent>
-        <Button label="Cargar más" onClick={handleRequest} />
+        <Button label="Cargar más" onClick={() => {}} />
       </FlexComponent>
       <FlexComponent align="flex-start" gap="40px">
         {data.map(({ url, title, explanation, copyright }, idx) => (
