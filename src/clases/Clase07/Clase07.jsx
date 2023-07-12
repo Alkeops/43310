@@ -9,9 +9,9 @@ export const Clase07 = () => {
     return (
         <FlexComponent align="flex-start" fullWidth>
             <Title label="Clase07" />
-            {/* <Pokemons /> */}
-            {/* <Nasa /> */}
-            {/* <Fetch /> */}
+            <Pokemons />
+            <Nasa />
+            <Fetch />
             {/* <Axios /> */}
             {/* <Ky /> */}
         </FlexComponent>

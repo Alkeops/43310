@@ -17,7 +17,7 @@ export const Pokemons = () => {
     const _pokemons = await Promise.all(promises);
      setPokemons(_pokemons); 
   
-  /*   let _pokemons = []
+   /*   let _pokemons = []
     for(const pokemon of data.results){
         const response = await fetch(pokemon.url);
         const data = await response.json();

@@ -21,7 +21,8 @@ export const Card = ({ img, title, price }) => {
         />
       </div>
       <div className="card__info">
-        <span className="card__info-price">${price}</span>
+        <span className="card__info-price">${(price).toFixed(2)}</span>
+        <span className="card__info-price">${(price).toLocaleString('es-Mx',{minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
         <span className="card__info-title">{title}</span>
       </div>
     </div>
