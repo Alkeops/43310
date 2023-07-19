@@ -34,7 +34,7 @@ export const Clase04 = () => {
       {/* Componentes con estado */}
       <FlexComponent  gap="24px">
         <Counter stock={10} onAdd={(qty) => console.log(`van ${qty}`)} />
-        <Card />
+        <Card item="hola" price="299" img=""/>
         <ToggleTheme />
         <Form />
       </FlexComponent>
