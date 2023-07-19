@@ -7,6 +7,8 @@ const API_URL = "https://api.escuelajs.co/api/v1";
 //Axios es mas robusto y por lo tanto mas pesado
 //https://www.npmjs.com/package/axios depende de si usaran todas sus bondades
 export const Axios = () => {
+  //useAlgo 
+  
   const [products, setProducts] = useState([]);
 
   useEffect(() => {

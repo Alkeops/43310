@@ -1,50 +1,30 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { RenderProps } from "../../components/RenderProps";
 import { Button, FlexComponent, Title } from "../../components/common";
-import { styled } from "../../components/hoc/styled";
-import { useQuery, useProducts, useMutateProduct } from "../../hooks/useDataFetch";
+import { styled } from "../../hoc/styled";
+import { useQuery } from "../../hooks/useQuery";
+import { useMountedEffect } from "../../hooks/useMountedEffect";
 
-export const Clase08 = () => {  
-  const {data, isLoading, error} = useProducts({enabled: false});
-  const {mutate} = useMutateProduct();
-
-  useEffect(()=>{
-    mutate({
-      title: "Producto 1",
-      price: 1000,
-      description: "Lorem, ipsum.",
-      categoryId: 1,
-      images: ["https://picsum.photos/200/300"]
-    })
-  },[])
-
-  useEffect(()=>{
-    console.log({data, isLoading, error})
-  },[data, isLoading, error])
-
+export const Clase08 = () => {
   const tamaño = "40px";
-
+  const [estado, setStado] = useState(false);
+  /* 
+ Tag functions - https://codeburst.io/javascript-what-are-tag-functions-97682f29521b
+  styled es un hoc, recibe un componente [Button] y retorna un nuevo componente vitaminado
+ */
   const StyledButton = styled(Button)`
     background: ${(theme) => theme.colors.blue};
     border: ${(theme) => `10px solid ${theme.colors.red}`};
     fontsize: ${tamaño};
   `;
 
+  useMountedEffect(() => {
+    console.log("Montado");
+  }, [estado]);
+
   return (
     <FlexComponent align="flex-start" fullWidth>
       <Title label="Clase08" />
-      <StyledButton label="hola" />
-      <RenderProps />
-      <RenderProps
-        customNumber={(number) => (
-          <h1 style={{ fontSize: 250, color: "red" }}>{number}</h1>
-        )}
-      />
-      <RenderProps
-        customNumber={(number) => (
-          <h1 style={{ fontSize: 25, color: "blue" }}>{number}</h1>
-        )}
-      />
     </FlexComponent>
   );
 };
