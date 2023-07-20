@@ -1,3 +1,4 @@
+import { useLocation } from "react-router-dom";
 import { Card } from "../../components/Card";
 import { Counter } from "../../components/Counter";
 import { Form } from "../../components/Form";
@@ -15,6 +16,8 @@ ctrl + p y nombre para abrir el archivo directamente
 */
 export const Clase04 = () => {
   const [value, setValue] = useState("");
+  const location = useLocation();
+  console.log({location})
   return (
     <FlexComponent gap="40px" align="flex-start">
       <Title label="Clase04" />
@@ -32,9 +35,9 @@ export const Clase04 = () => {
       </FlexComponent>
       <Title label="Componentes con estado" variant="subtitle" />
       {/* Componentes con estado */}
-      <FlexComponent  gap="24px">
+      <FlexComponent gap="24px">
         <Counter stock={10} onAdd={(qty) => console.log(`van ${qty}`)} />
-        <Card />
+        <Card price={200} title="Un producto" img="" />
         <ToggleTheme />
         <Form />
       </FlexComponent>

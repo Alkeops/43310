@@ -25,6 +25,7 @@ export const Clase08 = () => {
   return (
     <FlexComponent align="flex-start" fullWidth>
       <Title label="Clase08" />
+      <StyledButton label="Styled button" />
     </FlexComponent>
   );
 };
