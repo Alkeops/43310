@@ -5,7 +5,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import { Clase04, Clase05, Clase06, Clase07 } from "./clases";
+import { Clase04, Clase05, Clase06, Clase07, Clase10 } from "./clases";
 import { Clase08 } from "./clases/Clase08";
 import { FlexComponent } from "./components/common";
 import { Pokemon } from "./components/Pokemons/Pokemon";
@@ -32,6 +32,7 @@ const routes = createBrowserRouter(
       <Route path="clase06" element={<Clase06 />} />
       <Route path="clase07" element={<Clase07 />} />
       <Route path="clase08" element={<Clase08 />} />
+      <Route path="clase10" element={<Clase10 />} />
       <Route /* Te permite hacer peticiones antes de montar el componente de la ruta 
         loader recibe {params} [en este caso id] y ejecuta la funcion. 
         id = identifica el resultado de esa peticion en especifico
@@ -49,6 +50,7 @@ const routes = createBrowserRouter(
           <Navigate to="Clase04" />
         } /* Navigate es un componente de redirección */
       />
+      
     </>
   )
 );
