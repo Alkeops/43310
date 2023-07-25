@@ -1,27 +1,35 @@
 import { useState } from "react";
 import { FlexComponent, Title } from "../../components/common";
 
+const elements = ["A", "B", "C", "D", "E", "F"];
+//TODO
 export const Clase10 = () => {
-  const elements = ["A", "B", "C", "D", "E", "F"];
   const [state, setState] = useState(elements);
-  const handleDragStart = (event, index) => {
-    // Este evento se activa cuando comienza el arrastre de un elemento
-    event.dataTransfer.setData("text/plain", index.toString());
+
+  const handleDragStart = (e, index) => {
+    e.dataTransfer.setData("text/plain", index.toString());
   };
 
-  const handleDragOver = (event) => {
-    // Este evento es necesario para permitir el soltar el elemento
-    event.preventDefault();
+  const handleDragOver = (e) => {
+    e.preventDefault();
   };
 
-  const handleDrop = (event, index) => {
-    // Este evento se activa cuando se suelta el elemento arrastrado
-    const draggedIndex = +event.dataTransfer.getData("text");
-    if (draggedIndex === index) return;
+  const handleDrop = (e, index) => {
+    const draggedIndex = e.dataTransfer.getData("text");
+    if (index === +draggedIndex) return;
 
-    const updatedElements = state.filter((_, idx) => idx !== draggedIndex);
-    updatedElements.splice(index, 0, state[draggedIndex]);
-    setState(updatedElements);
+    const updateArray = state.filter((_, idx) => idx !== +draggedIndex);
+    updateArray.splice(index, 0, state[+draggedIndex]);
+
+    console.log({
+      eliminado: state.filter((_, idx) => idx !== +draggedIndex),
+      actualizado: updateArray,
+    });
+    setState(updateArray);
+    /*  console.log(e); */
+  };
+  const handleClick = () => {
+    console.log("click");
   };
 
   return (
@@ -30,11 +38,12 @@ export const Clase10 = () => {
       <FlexComponent gap="24px" direction="row">
         {state.map((element, index) => (
           <div
-            key={element}
-            draggable // Hace que el elemento sea "arrastrable"
-            onDragStart={ e => handleDragStart(e, index)}
+            draggable
+            onClick={handleClick}
+            onDragStart={(e) => handleDragStart(e, index)}
             onDragOver={handleDragOver}
             onDrop={(e) => handleDrop(e, index)}
+            key={element}
             style={{
               background: "#ee8dec",
               color: "#121212",
