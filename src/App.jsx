@@ -9,6 +9,7 @@ import { Clase04, Clase05, Clase06, Clase07, Clase10 } from "./clases";
 import { Clase08 } from "./clases/Clase08";
 import { FlexComponent } from "./components/common";
 import { Pokemon } from "./components/Pokemons/Pokemon";
+import { QueryProvider } from "./config/ReactQuery";
 
 const getPokemon = async (pokemonNumber) => {
   try {
@@ -50,7 +51,6 @@ const routes = createBrowserRouter(
           <Navigate to="Clase04" />
         } /* Navigate es un componente de redirección */
       />
-      
     </>
   )
 );
@@ -58,7 +58,9 @@ const routes = createBrowserRouter(
 function App() {
   return (
     <div style={{ paddingBottom: 100 }}>
-      <RouterProvider router={routes} />
+      <QueryProvider>
+        <RouterProvider router={routes} />
+      </QueryProvider>
     </div>
   );
 }

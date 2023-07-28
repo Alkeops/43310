@@ -1,10 +1,11 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Card } from "../../components/Card";
 import { Counter } from "../../components/Counter";
 import { Form } from "../../components/Form";
 import { ToggleTheme } from "../../components/ToggleTheme";
 import { Button, Title, FlexComponent, Input } from "../../components/common";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNasaData } from "../../lib/nasa.requests";
 /* 
 Componentes de presentacion, solo estan para mostrar informacion, altamente ligados con los estilos.
 
@@ -17,9 +18,17 @@ ctrl + p y nombre para abrir el archivo directamente
 export const Clase04 = () => {
   const [value, setValue] = useState("");
   const location = useLocation();
-  console.log({location})
+  const navigate = useNavigate();
+
+  const {data} = useNasaData();
+  useEffect(()=>{
+    console.log(data)
+  },[data])
+
+
   return (
     <FlexComponent gap="40px" align="flex-start">
+      <Button label="Clase 07" onClick={()=> navigate('/clase07')} />
       <Title label="Clase04" />
       <Title label="Componentes de presentacion" variant="subtitle" />
       {/* Componentes de presentacion */}
