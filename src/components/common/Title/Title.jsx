@@ -5,4 +5,4 @@ import "./Title.css";
     por ahora solo existe title, subtitle [Esto se puede perfeccionar mas adelante]
 
 */
-export const Title = ({label, variant= "title"}) => <h1 className={`title title--${variant}`}>{label}</h1>
+export const Title = ({label, variant= "title"}) => <h1 className={`title title--${variant}`}>{label}</h1>;
